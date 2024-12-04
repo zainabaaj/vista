@@ -8,12 +8,13 @@ export default function Home() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // This will set isClient to true only after the component is mounted (client-side)
     setIsClient(true);
   }, []);
 
   return (
     <div className="flex flex-col min-h-screen bg-[url('/vistabg.png')] bg-cover bg-center text-center justify-between">
-     
+      {/* Main Content */}
       <div className="flex flex-col items-center justify-center flex-grow">
         <div className='flex flex-row text-white items-center'>
           <Image
@@ -28,7 +29,7 @@ export default function Home() {
         {isClient && (
           <lottie-player
             src="https://lottie.host/421207fa-2501-40ff-9638-c1442baddfed/8oztSEOJZW.json"
-            background="#FFFFFF" 
+            background="#FFFFFF"
             speed="1"
             style={{ width: '400px', height: '400px' }}
             loop
@@ -46,7 +47,7 @@ export default function Home() {
         </p>
       </div>
 
-
+      {/* Footer */}
       <footer className="bg-navy text-white py-6">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center items-center md:text-left">
